@@ -1,3 +1,11 @@
 
-<app-event [event]="event"></app-event>
-<app-choice [choice]="choice"></app-choice>
+<p>
+    {{currentStory.$event.$text}}
+</p>
+<div>
+    <ol>
+        <li *ngFor="let option of currentStory.$choice.$options">
+            {{option}}
+        </li>
+    </ol>
+</div>

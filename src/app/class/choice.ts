@@ -5,6 +5,7 @@ export class Choice {
     private name: string;
 
     private type: ChoiceType;
+
     private options: string[];
 
 

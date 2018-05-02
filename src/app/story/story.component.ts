@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { GameEvent } from '../class/game-event';
 import { Choice } from '../class/choice';
-import { EVENT_UN } from './event/list-event';
-import { CHOICE_UN } from './choice/list-choice';
+import { EVENT_HELLO_WORLD_FIRST } from './event/list-event';
+import { CHOICE_HELLO_WORLD_FIRST } from './choice/list-choice';
+import { Story } from '../class/story';
 
 @Component({
     selector: 'app-story',
@@ -11,19 +12,17 @@ import { CHOICE_UN } from './choice/list-choice';
 })
 export class StoryComponent implements OnInit {
 
-    events: GameEvent[];
-    choices: Choice[];
+    stories: Story[];
 
-    event: GameEvent;
-    choice: Choice;
+    currentStory: Story;
 
     constructor() {
-
+        this.stories = [];
     }
 
     ngOnInit() {
-        this.event = EVENT_UN;
-        this.choice = CHOICE_UN;
+        this.stories.push(new Story(EVENT_HELLO_WORLD_FIRST, CHOICE_HELLO_WORLD_FIRST));
+        this.currentStory = this.stories.shift();
     }
 
 }

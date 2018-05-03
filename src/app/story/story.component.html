@@ -1,11 +1,12 @@
 
-<p>
+<h2>
     {{currentStory.$event.$text}}
-</p>
+</h2>
+<br>
 <div>
     <ol>
-        <li *ngFor="let option of currentStory.$choice.$options">
-            {{option}}
+        <li *ngFor="let option of currentStory.$choice.$options; let i = index" class="choice" (click)="nextStory(i)">
+            {{option.$text}}
         </li>
     </ol>
 </div>

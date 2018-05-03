@@ -1,4 +1,5 @@
 import { ChoiceType } from "./choice-type";
+import { Result } from "./result";
 
 export class Choice {
 
@@ -6,10 +7,10 @@ export class Choice {
 
     private type: ChoiceType;
 
-    private options: string[];
+    private options: Result[];
 
 
-    constructor($name: string, $type: ChoiceType, $options: string[]) {
+    constructor($name: string, $type: ChoiceType, $options: Result[]) {
         this.name = $name;
         this.type = $type;
         this.options = $options;
@@ -53,15 +54,15 @@ export class Choice {
      * Getter $options
      * @return {string}
      */
-    public get $options(): string[] {
+    public get $options(): Result[] {
         return this.options;
     }
 
     /**
      * Setter $options
-     * @param {string} value
+     * @param {Result} value
      */
-    public set $options(value: string[]) {
+    public set $options(value: Result[]) {
         this.options = value;
     }
 

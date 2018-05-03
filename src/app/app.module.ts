@@ -5,6 +5,7 @@ import { PlayerComponent } from './player/player.component';
 import { ChoiceService } from './service/choice.service';
 import { GameEventService } from './service/game-event.service';
 import { StoryComponent } from './story/story.component';
+import { PlayerService } from './service/player.service';
 
 
 
@@ -20,7 +21,8 @@ import { StoryComponent } from './story/story.component';
   ],
   providers: [
       GameEventService,
-      ChoiceService
+      ChoiceService,
+      PlayerService
     ],
   bootstrap: [AppComponent]
 })

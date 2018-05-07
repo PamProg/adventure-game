@@ -2,6 +2,9 @@ import { Choice } from "../../class/choice";
 import { ChoiceType } from "../../class/choice-type";
 import { Result } from "../../class/result";
 import { Player } from "../../class/player";
+import { MOB_WOLF } from "../../entity/list-mob";
+import { Mob } from "../../class/mob";
+import { GameplayService } from "../../service/gameplay.service";
 
 
 
@@ -25,15 +28,16 @@ export const CHOICE_HELLO_WORLD_SECOND: Choice = new Choice("chw2", ChoiceType.S
 
 // Against Monsters/Mobs
 
-export const CHOICE_COMMON_MOB_FIRST: Choice = new Choice("ccm1", ChoiceType.Simple, [
-        new Result("Combattre !", ( p => {
-            // TODO : combattre le monstre
+export const CHOICE_COMMON_MOB_FIRST: Choice = new Choice("ccm1", ChoiceType.Fight, [
+        new Result("Combattre !", ( (p, m: Mob) => {
+            console.log("player, mob", p, m);
+            GameplayService.fight(p, m);
         })),
         new Result("Fuir !", ( p => p.$lightside += 1)),
         new Result("Observer !", ( p => p.$exp += 1))
     ]);
     
-    export const CHOICE_COMMON_MOB_SECOND: Choice = new Choice("ccm2", ChoiceType.Simple, [
+    export const CHOICE_COMMON_MOB_SECOND: Choice = new Choice("ccm2", ChoiceType.Fight, [
         new Result("Combattre !", ( p => {
             // TODO : combattre le monstre
         })),

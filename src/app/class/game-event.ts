@@ -7,12 +7,16 @@ export class GameEvent {
     private type: GameEventType;
     private text: string;
 
+    private others: any[];
 
-    constructor($name: string, $type: GameEventType, $text: string) {
+
+    constructor($name: string, $type: GameEventType, $text: string, ...$others: any[]) {
         this.name = $name;
         this.type = $type;
         this.text = $text;
+        this.others = $others;
     }
+
 
 
 
@@ -63,6 +67,22 @@ export class GameEvent {
      */
     public set $text(value: string) {
         this.text = value;
+    }
+
+    /**
+     * Getter $others
+     * @return {any[]}
+     */
+    public get $others(): any[] {
+        return this.others;
+    }
+
+    /**
+     * Setter $others
+     * @param {any[]} value
+     */
+    public set $others(value: any[]) {
+        this.others = value;
     }
 
 }

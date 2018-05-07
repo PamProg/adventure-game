@@ -2,10 +2,10 @@ import { Player } from "./player";
 
 export class Result {
     private text: string;
-    private callback: (player: Player) => void;
+    private callback: (player: Player, ...others: any[]) => void;
 
 
-    constructor($text: string, $callback: (player: Player) => void) {
+    constructor($text: string, $callback: (player: Player, ...others: any[]) => void) {
         this.text = $text;
         this.callback = $callback;
     }
@@ -28,11 +28,11 @@ export class Result {
     }
 
 
-    public get $callback(): (player: Player) => void {
+    public get $callback(): (player: Player, ...others: any[]) => void {
         return this.callback;
     }
 
-    public set $callback(value: (player: Player) => void) {
+    public set $callback(value: (player: Player, ...others: any[]) => void) {
         this.callback = value;
     }
 

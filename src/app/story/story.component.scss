@@ -1,8 +1,27 @@
 
+
+.event {
+    height: 20%;
+}
+
 .choice {
+
+    padding-top: 1.5%;
+    padding-bottom: 0.5%;
+
+    background-color: rgba(200, 200, 200, 0.5);
+    border-radius: 10px;
+}
+
+.choices {
     cursor: pointer;
 }
 
-.choice:hover {
-    background-color: gainsboro;
+.choices:hover {
+    background-color: rgba(100, 100, 100, 0.5);
+    border-radius: 3px;
+}
+
+.ending {
+    font-style: italic;
 }

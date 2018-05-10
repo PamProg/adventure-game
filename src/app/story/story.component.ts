@@ -16,10 +16,10 @@ import { GameEventType } from '../class/game-event-type';
 export class StoryComponent implements OnInit {
 
     stories: Story[];
+    player: Player;
 
     currentStory: Story;
-
-    player: Player;
+    ending: string;
 
     constructor(private playerService: PlayerService) {
 
@@ -29,6 +29,7 @@ export class StoryComponent implements OnInit {
         });
 
         this.stories = [];
+        this.ending = "";
     }
 
     ngOnInit() {
@@ -38,21 +39,19 @@ export class StoryComponent implements OnInit {
         this.stories.push(new Story(EVENT_COMMON_FIGHT, CHOICE_COMMON_MOB_FIRST));
 
 
-
         this.currentStory = this.stories.shift();
     }
 
 
     nextStory(i: number) {
 
-        console.log(this.currentStory);
-
         if (this.currentStory.$event.$type === GameEventType.Fight) {
-            this.currentStory.$choice.$options[i].$callback(this.player, this.currentStory.$event.$others[0]);
-            console.log("player", this.player);
+            this.currentStory.$choice.$results[i].$callback(this.player, this.currentStory.$event.$others[0]);
         } else {
-            this.currentStory.$choice.$options[i].$callback(this.player);
+            this.currentStory.$choice.$results[i].$callback(this.player);
         }
+
+        this.ending = this.currentStory.$choice.$results[i].$ending;
 
         this.playerService.setPlayer(this.player);
 

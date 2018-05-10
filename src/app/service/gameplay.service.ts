@@ -16,8 +16,7 @@ export class GameplayService {
         if (player.$attack < mob.$defense) {
             player.$currentLife = 0;
         } else {
-            while (mob.$currentLife > 0) {
-                console.log("fight pp m", player, mob);
+            while (mob.$currentLife > 0 || player.$currentLife > 0) {
                 mob.$currentLife -= (player.$attack - mob.$defense);
                 player.$currentLife -= (mob.$attack - player.$defense);
             }

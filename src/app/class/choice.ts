@@ -7,13 +7,13 @@ export class Choice {
 
     private type: ChoiceType;
 
-    private options: Result[];
+    private results: Result[];
 
 
-    constructor($name: string, $type: ChoiceType, $options: Result[]) {
+    constructor($name: string, $type: ChoiceType, $results: Result[]) {
         this.name = $name;
         this.type = $type;
-        this.options = $options;
+        this.results = $results;
     }
 
 
@@ -51,19 +51,19 @@ export class Choice {
     }
 
     /**
-     * Getter $options
+     * Getter $results
      * @return {string}
      */
-    public get $options(): Result[] {
-        return this.options;
+    public get $results(): Result[] {
+        return this.results;
     }
 
     /**
-     * Setter $options
+     * Setter $results
      * @param {Result} value
      */
-    public set $options(value: Result[]) {
-        this.options = value;
+    public set $results(value: Result[]) {
+        this.results = value;
     }
 
 }

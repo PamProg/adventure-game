@@ -8,13 +8,25 @@ export class Mob {
     private currentLife: number;
     private maxLife: number;
 
+    // Rewards
+    private exp: number;
+    private gold: number;
+    private lightside: number;
+    private darkside: number;
 
-    constructor($name: string, $attack: number, $defense: number, $currentLife: number, $maxLife: number) {
+
+    constructor($name: string, $attack: number, $defense: number, $currentLife: number, $maxLife: number, $exp?: number, 
+        $gold?: number, $lightside?: number, $darkside?: number) {
         this.name = $name;
         this.attack = $attack;
         this.defense = $defense;
         this.currentLife = $currentLife;
         this.maxLife = $maxLife;
+
+        this.exp = $exp;
+        this.gold = $gold;
+        this.lightside = $lightside;
+        this.darkside = $darkside;
     }
 
 
@@ -98,5 +110,71 @@ export class Mob {
     public set $maxLife(value: number) {
         this.maxLife = value;
     }
+
+
+    /**
+     * Getter $exp
+     * @return {number}
+     */
+    public get $exp(): number {
+        return this.exp;
+    }
+
+    /**
+     * Setter $exp
+     * @param {number} value
+     */
+    public set $exp(value: number) {
+        this.exp = value;
+    }
+
+    /**
+     * Getter $gold
+     * @return {number}
+     */
+    public get $gold(): number {
+        return this.gold;
+    }
+
+    /**
+     * Setter $gold
+     * @param {number} value
+     */
+    public set $gold(value: number) {
+        this.gold = value;
+    }
+
+    /**
+     * Getter $lightside
+     * @return {number}
+     */
+    public get $lightside(): number {
+        return this.lightside;
+    }
+
+    /**
+     * Setter $lightside
+     * @param {number} value
+     */
+    public set $lightside(value: number) {
+        this.lightside = value;
+    }
+
+    /**
+     * Getter $darkside
+     * @return {number}
+     */
+    public get $darkside(): number {
+        return this.darkside;
+    }
+
+    /**
+     * Setter $darkside
+     * @param {number} value
+     */
+    public set $darkside(value: number) {
+        this.darkside = value;
+    }
+
 
 }

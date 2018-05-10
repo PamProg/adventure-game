@@ -1,7 +1,13 @@
 
 
 .event {
-    height: 20%;
+    padding-top: 1.5%;
+    padding-bottom: 0.5%;
+    padding-left: 2%;
+    padding-right: 1%;
+
+    background-color: rgba(200, 200, 200, 0.5);
+    border-radius: 10px;
 }
 
 .choice {
@@ -23,5 +29,11 @@
 }
 
 .ending {
+
+    padding-left: 5px;
+
     font-style: italic;
+
+    background-color: rgba(50, 150, 80, 0.5);
+    border-radius: 3px;
 }

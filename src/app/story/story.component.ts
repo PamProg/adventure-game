@@ -34,7 +34,7 @@ export class StoryComponent implements OnInit {
 
     ngOnInit() {
 
-        for (let i; i < EVENT_HELLO_WORLD.length; i++) {
+        for (let i = 0; i < EVENT_HELLO_WORLD.length; i++) {
             this.stories.push(new Story(EVENT_HELLO_WORLD[i], CHOICE_HELLO_WORLD[i]));
         }
 

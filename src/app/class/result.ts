@@ -6,9 +6,6 @@ export class Result {
     private ending: string;
 
 
-
-
-    // constructor($text: string, $callback: (player: Player, ...others: any[]) => void, $ending: string = "") {
     constructor($text: string, $callback: (player: Player, ...others: any[]) => void, $ending?: string) {
         this.text = $text;
         this.callback = $callback;

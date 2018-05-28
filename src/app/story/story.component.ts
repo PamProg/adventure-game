@@ -1,14 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GameEvent } from '../class/game-event';
 import { Choice } from '../class/choice';
-import {
-    EVENT_HELLO_WORLD_FIRST, EVENT_HELLO_WORLD_SECOND, EVENT_COMMON_FIRST, EVENT_COMMON_FIGHT,
-    EVENT_HELLO_WORLD_THIRD, EVENT_HELLO_WORLD_FOURTH, EVENT_HELLO_WORLD_FIFTH
-} from './event/list-event';
-import {
-    CHOICE_HELLO_WORLD_FIRST, CHOICE_HELLO_WORLD_SECOND, CHOICE_COMMON_MOB_FIRST, CHOICE_HELLO_WORLD_THIRD,
-    CHOICE_HELLO_WORLD_FOURTH, CHOICE_HELLO_WORLD_FIFTH
-} from './choice/list-choice';
+import { EVENT_HELLO_WORLD, EVENT_COMMON_FIGHT } from './event/list-event';
+import { CHOICE_HELLO_WORLD, CHOICE_COMMON_MOB_FIRST } from './choice/list-choice';
 import { Story } from '../class/story';
 import { Player } from '../class/player';
 import { PlayerService } from '../service/player.service';
@@ -39,11 +33,10 @@ export class StoryComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.stories.push(new Story(EVENT_HELLO_WORLD_FIRST, CHOICE_HELLO_WORLD_FIRST));
-        this.stories.push(new Story(EVENT_HELLO_WORLD_SECOND, CHOICE_HELLO_WORLD_SECOND));
-        this.stories.push(new Story(EVENT_HELLO_WORLD_THIRD, CHOICE_HELLO_WORLD_THIRD));
-        this.stories.push(new Story(EVENT_HELLO_WORLD_FOURTH, CHOICE_HELLO_WORLD_FOURTH));
-        this.stories.push(new Story(EVENT_HELLO_WORLD_FIFTH, CHOICE_HELLO_WORLD_FIFTH));
+
+        for (let i; i < EVENT_HELLO_WORLD.length; i++) {
+            this.stories.push(new Story(EVENT_HELLO_WORLD[i], CHOICE_HELLO_WORLD[i]));
+        }
 
         this.stories.push(new Story(EVENT_COMMON_FIGHT, CHOICE_COMMON_MOB_FIRST));
 

@@ -2,5 +2,6 @@
 export enum GameEventType {
     Simple,
     Complex,
-    Fight
+    Fight,
+    Quest
 }

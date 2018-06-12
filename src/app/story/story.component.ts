@@ -7,6 +7,7 @@ import { Story } from '../class/story';
 import { Player } from '../class/player';
 import { PlayerService } from '../service/player.service';
 import { GameEventType } from '../class/game-event-type';
+import { STORY_HELLO_WORLD, STORY_QUEST_FARMER_FIRST } from './list-story';
 
 @Component({
     selector: 'app-story',
@@ -34,12 +35,11 @@ export class StoryComponent implements OnInit {
 
     ngOnInit() {
 
-        for (let i = 0; i < EVENT_HELLO_WORLD.length; i++) {
-            this.stories.push(new Story(EVENT_HELLO_WORLD[i], CHOICE_HELLO_WORLD[i]));
-        }
+        STORY_HELLO_WORLD.forEach(s => this.stories.push(s));
+
+        this.stories.push(STORY_QUEST_FARMER_FIRST);
 
         this.stories.push(new Story(EVENT_COMMON_FIGHT, CHOICE_COMMON_MOB_FIRST));
-
 
         this.currentStory = this.stories.shift();
     }

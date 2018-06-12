@@ -38,3 +38,5 @@ export const EVENT_HELLO_WORLD: GameEvent[] = [
     export const EVENT_COMMON_THIRD: GameEvent = new GameEvent("ec3", GameEventType.Simple, 
         "Vous arrivez dans un village. Que faites-vous ?");
 
+
+    
